@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "300510119894",
+    "firebase_url": "https://frietapp-6a641.firebaseio.com",
+    "project_id": "frietapp-6a641",
+    "storage_bucket": "frietapp-6a641.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:300510119894:android:e1ca47d3a414fba7",
+        "android_client_info": {
+          "package_name": "mollie.steven.frieten"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "300510119894-q0dipa85ve6g5n5vc1en35qm3mlmlr90.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXo4gK9zqIH1kraRZnEhCgxfJT0rKeJ3s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
