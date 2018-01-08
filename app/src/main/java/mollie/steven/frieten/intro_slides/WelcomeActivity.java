@@ -18,9 +18,9 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import mollie.steven.frieten.MainActivity;
 import mollie.steven.frieten.R;
 import mollie.steven.frieten.helpers.PrefManager;
+import mollie.steven.frieten.login.LoginActivity;
 
 public class WelcomeActivity extends AppCompatActivity {
     private ViewPager viewPager;
@@ -120,7 +120,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
     private void launchHomeScreen(){
         prefManager.setIsFirstTimeLaunch(false);
-        startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
+        startActivity(new Intent(WelcomeActivity.this, LoginActivity.class));
         finish();
     }
 
