@@ -2,10 +2,12 @@ package mollie.steven.frieten.login;
 
 import android.content.Intent;
 import android.nfc.Tag;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.RelativeLayout;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -21,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final int RC_SIGN_IN = 1;
     private static final String TAG = "failed signin";
     private GoogleSignInClient mGoogleSignInClient;
+    private RelativeLayout loginActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +32,12 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN)
+                                                        .requestIdToken(getString(R.string.default_web_client_id))
                                                         .requestEmail()
                                                         .build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        loginActivity = (RelativeLayout) findViewById(R.id.activity_login);
 
         SignInButton signInButton = (SignInButton) findViewById(R.id.sign_in_button);
         signInButton.setSize(SignInButton.SIZE_STANDARD);
@@ -70,9 +75,10 @@ public class LoginActivity extends AppCompatActivity {
         try{
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             //signed in succesfully --> show mainactivity
+            Snackbar.make(loginActivity, "Login succesful", 1000);
         }catch (ApiException e){
             Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());
-            //updateUI(null);
+            Snackbar.make(loginActivity, "Login failed", 1000);
         }
     }
 }
